@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            background-color: #d68d8da6;
+
+        }
+
+        .container {
+            width: 400px;
+
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 60px;
+            outline: auto;
+        }
+
+        .form {
+            text-align: center;
+            color: blue;
+        }
+
+        input,
+        label {
+            color: black;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+
+        /*.form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 3px;
+        }*/
+
+        .form-group input[type="submit"] {
+            background-color: rgb(31, 22, 163);
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+        
+        .form-group button[type="close"] {
+            display: inline-block;
+            background-color: rgb(31, 22, 163);
+            color: white;
+            margin-top: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+            text-align: center;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: white;
+            color: rgb(82, 27, 153);
+        }
+        .form-group button[type="close"]:hover {
+            background-color: white;
+            color: rgb(82, 27, 153);
+        }
+        input[type="date"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="form">SignUp</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">First Name :</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name : </label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="batch">Batch : </label>
+                <select name="batch" id="batch" required>
+                    <option value="select">select</option>
+                    <option value="MCA">MCA</option>
+                    <option value="MCA-AIML">MCA (AI & ML)</option>
+                    <option value="MCA-Cloud">MCA (Cloud Computing)</option>
+                    <option value="MBA">MBA</option>
+                    <option value="MBA-Economics ">MBA (Economics)</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <!-- <label for="age">Age : </label>
+                <input type="number" id="age" name="age" required> -->
+                <label for="date">DOB :</label>
+                <input type="date" id="date" name="date" required>
+
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email : </label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password : </label>
+                <input type="password" id="password" name="password" required>
+            </div>
+        
+            <div class="form-group">
+                <input type="submit" value="SignUp" required>
+                <button type="Close" value="Close">Close</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const batch = document.getElementById('batch').value;
+        if (batch === "select" || batch === "") {
+            alert("Please select a valid batch.");
+            return;
+        }
+        alert("Signup successful! Welcome.");
+        form.reset(); 
+    });
+    
+</script>
+
+
+</html>
